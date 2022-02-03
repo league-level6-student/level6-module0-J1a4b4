@@ -36,15 +36,15 @@ public class JeopardyApi {
         //The base URL has already been provided, but we we need to take the "value" parameter passed into
         //this method and supply it as a query parameter with the name of "value".  This allows us to retrieve a question
         //with the specified point value.
-        //
+        Mono<Clue[]> cr  = webClient.get().retrieve().bodyToMono(Clue[].class);
+        Clue[] cri = cr.block();
         //Make sure to save the response as type Clue[].class in the bodyToMono() method call
-
         //2
         //Get a random number less than the size of the Clue array
-
+        Random random = new Random();
+        int r = random.nextInt(cri.length);
         //3
         //return the clue at the random index you just created
-
-        return null;
+        return cri[r];
     }
 }

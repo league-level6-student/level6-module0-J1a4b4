@@ -54,19 +54,19 @@ public class CatFactsApi {
     	
     }
 
-    public String getCatFact() {
+    public CatWrapper getCatFact() {
         //Make the request, saving the response in an object of the type that you just created in your
         //data_transfer_objects package (CatWrapper)
-    	
+    	Mono<CatWrapper> mono = webClient.get().retrieve().bodyToMono(CatWrapper.class);
         //Use block() to collect the response into a java object using the class you just created
-
+    	CatWrapper cw = mono.block();
         //return the Object
-        return null;
+        return cw;
     }
 
     public String findCatFact(){
         //use the getCatFact method to retrieve a cat fact
-    	String fact = getCatFact();
+    	String fact = getCatFact().getType();
         //return the first (and only) String in the Arraylist of data in the response
         return fact;
     }
