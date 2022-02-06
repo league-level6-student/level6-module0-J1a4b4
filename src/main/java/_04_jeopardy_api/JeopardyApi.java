@@ -36,7 +36,7 @@ public class JeopardyApi {
         //The base URL has already been provided, but we we need to take the "value" parameter passed into
         //this method and supply it as a query parameter with the name of "value".  This allows us to retrieve a question
         //with the specified point value.
-        Mono<Clue[]> cr  = webClient.get().retrieve().bodyToMono(Clue[].class);
+        Mono<Clue[]> cr  = webClient.get().uri(uriBuilder -> uriBuilder.queryParam("value").build()).retrieve().bodyToMono(Clue[].class);
         Clue[] cri = cr.block();
         //Make sure to save the response as type Clue[].class in the bodyToMono() method call
         //2

@@ -10,7 +10,7 @@ public class Payroll {
     }
 
     public double calculateMileageReimbursement(int milesTraveled){
-        double centsPerMile = .575;
+        float centsPerMile = (float) .575;
         return milesTraveled * centsPerMile;
     }
 
