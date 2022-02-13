@@ -16,16 +16,25 @@ import static org.mockito.Mockito.*;
 class MyDonutShopTest {
 
     MyDonutShop myDonutShop;
+    
+    @Mock
+    PaymentService paymentService;
+    
+    @Mock
+    DeliveryService deliveryService;
+    
+    @Mock
+    BakeryService bakeryService;
 
     @BeforeEach
     void setUp() {
-
+    	MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void itShouldTakeDeliveryOrder() throws Exception {
         //given
-
+    	
         //when
 
         //then
