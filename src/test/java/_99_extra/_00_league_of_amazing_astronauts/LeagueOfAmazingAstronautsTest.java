@@ -19,44 +19,57 @@ class LeagueOfAmazingAstronautsTest {
 
     LeagueOfAmazingAstronauts underTest = new LeagueOfAmazingAstronauts();
 
+    @Mock
+    Rocketship rocketship;
+    
+    @Mock
+    Astronaut astronaut;
+    
     @BeforeEach
     void setUp() {
-
+    	MockitoAnnotations.openMocks(this);
     }
 
     @Test
     void itShouldPrepareAstronaut() {
         //given
-
+    	
         //when
-
+    	
         //then
+    	
     }
 
     @Test
     void itShouldLaunchRocket() {
         //given
-
+    	//when(rocketship) {
+    		
+    	//}
         //when
-
+    	
         //then
+    	
     }
 
 
     @Test
     void itShouldThrowWhenDestinationIsUnknown() {
         //given
-
+    	
         //when
-        //then
+        
+    	//then
+    	
     }
 
     @Test
     void itShouldThrowNotLoaded() {
         //given
-
+    	
         //when
-        //then
-
+        
+    	//then
+    	
     }
 }
